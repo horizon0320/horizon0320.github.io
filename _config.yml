@@ -4,8 +4,8 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # "default" or "air"
-title                    : "Ruize Hui"
-title_separator          : "-"
+title                    : "Ethan's
+title_separator          : ""
 name                     : &name "Ethan"
 description              : &description "Ethan's academic portfolio · UCAS"
 url                      : "https://horizon0320.github.io"   # 如果你的仓库是 <username>.github.io，请改成对应域名
