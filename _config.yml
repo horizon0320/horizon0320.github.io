@@ -4,7 +4,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # "default" or "air"
-title                    : "Ethan's
+title                    : "Ethan's Home"
 title_separator          : ""
 name                     : &name "Ethan"
 description              : &description "Ethan's academic portfolio · UCAS"
