@@ -4,7 +4,7 @@ title: "Home"
 author_profile: true
 ---
 
-Hi! I am ruize hui, a second year student at University of Chinese Academy of Sciences (UCAS).  
+Hi! I am Ethan, a second year student at University of Chinese Academy of Sciences (UCAS).  
 If you’re interested in my work or potential collaboration, feel free to reach me out.
 
 My current research interests include **Efficient DL**, **LLM Controlable generation**. 
