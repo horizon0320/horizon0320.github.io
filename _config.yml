@@ -6,8 +6,8 @@ locale                   : "en-US"
 site_theme               : "default" # "default" or "air"
 title                    : "Ruize Hui"
 title_separator          : "-"
-name                     : &name "Ruize Hui"
-description              : &description "Ruize Hui's academic portfolio · UCAS"
+name                     : &name "Ethan"
+description              : &description "Ethan's academic portfolio · UCAS"
 url                      : "https://horizon0320.github.io"   # 如果你的仓库是 <username>.github.io，请改成对应域名
 baseurl                  : ""                                 # 用户站点保持空
 repository               : "horizon0320/horizon0320.github.io"  # 改成你仓库的 owner/name
@@ -16,13 +16,13 @@ repository               : "horizon0320/horizon0320.github.io"  # 改成你仓�
 author:
   # Biographic information
   avatar           : "profile.png"             # 放到 /images 或根目录，路径按实际改
-  name             : "Ruize Hui"
+  name             : "Ethan"
   pronouns         :                           # 可留空
   bio              : "Second year Master student in CS"
   location         : "Beijing, China"
   employer         : "School of AI, UCAS"
   # uri              : "https://openreview.net/profile?id=~Ruize_Hui1"   # 你的 OpenReview
-  email            : "huiruize24@mails.ucas.ac.cn"
+  email            : "yanzhili1024@163.com"
 
   # Academic websites（没有就留空，避免显示错误链接）
   academia         :
