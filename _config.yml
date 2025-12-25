@@ -16,13 +16,13 @@ repository               : "horizon0320/horizon0320.github.io"  # 改成你仓�
 author:
   # Biographic information
   avatar           : "profile.png"             # 放到 /images 或根目录，路径按实际改
-  name             : "Ethan"
+  name             : "Ruize"
   pronouns         :                           # 可留空
   bio              : "Second year Master student in CS"
   location         : "Beijing, China"
-  employer         : "School of AI, UCAS"
+  employer         : "School of Artificial Intelligence, UCAS"
   # uri              : "https://openreview.net/profile?id=~Ruize_Hui1"   # 你的 OpenReview
-  email            : "yanzhili1024@163.com"
+  email            : "huiruize24@mails.ucas.ac.cn"
 
   # Academic websites（没有就留空，避免显示错误链接）
   academia         :
