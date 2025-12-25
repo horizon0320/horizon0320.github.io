@@ -20,8 +20,8 @@ author:
   pronouns         :                           # 可留空
   bio              : "Second year Master student in School of Artificial Intelligence, UCAS"
   location         : "Beijing, China"
-  employer         : ""
-  # uri              : "https://openreview.net/profile?id=~Ruize_Hui1"   # 你的 OpenReview
+  employer         : "UCAS"
+  url              : "https://openreview.net/profile?id=~Ruize_Hui1"   # 你的 OpenReview
   email            : "huiruize24@mails.ucas.ac.cn"
 
   # Academic websites（没有就留空，避免显示错误链接）
