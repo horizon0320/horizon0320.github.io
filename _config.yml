@@ -18,9 +18,9 @@ author:
   avatar           : "profile.png"             # 放到 /images 或根目录，路径按实际改
   name             : "Ruize"
   pronouns         :                           # 可留空
-  bio              : "Second year Master student in CS"
+  bio              : "Second year Master student in School of Artificial Intelligence, UCAS"
   location         : "Beijing, China"
-  employer         : "School of Artificial Intelligence, UCAS"
+  employer         : ""
   # uri              : "https://openreview.net/profile?id=~Ruize_Hui1"   # 你的 OpenReview
   email            : "huiruize24@mails.ucas.ac.cn"
 
