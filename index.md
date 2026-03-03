@@ -16,4 +16,4 @@ I am always open to engaging discussions, collaborative research opportunities, 
 **I am actively looking for PhD positions.** If you are interested in my work or think I might be a good fit for your group, please don't hesitate to contact me!
 
 
-_Last Update: Sep 16, 2025_
+_Last Update: Mar. 03 2026_
