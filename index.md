@@ -13,5 +13,7 @@ My research focuses on developing **efficient and controllable AI systems**, wit
 
 I am always open to engaging discussions, collaborative research opportunities, and innovative projects that push the boundaries of AI technology. Feel free to reach out if you share similar research interests or have potential collaboration ideas.
 
+**I am actively looking for PhD positions.** If you are interested in my work or think I might be a good fit for your group, please don't hesitate to contact me!
+
 
 _Last Update: Sep 16, 2025_
