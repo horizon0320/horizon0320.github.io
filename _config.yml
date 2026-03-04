@@ -18,7 +18,7 @@ author:
   avatar           : "profile.png"             # 放到 /images 或根目录，路径按实际改
   name             : "Ruize Hui"
   pronouns         :                           # 可留空
-  bio              : "2nd Master student at SAI,UCAS"
+  bio              : "2nd Master student at SAI, UCAS"
   location         : "Beijing, China"
   employer         : "UCAS"
   url              : "https://openreview.net/profile?id=~Ruize_Hui1"   # 你的 OpenReview
