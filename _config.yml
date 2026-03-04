@@ -4,7 +4,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # "default" or "air"
-title                    : "Ethan's Home"
+title                    : "Ruize's Home"
 title_separator          : ""
 name                     : &name "Ethan"
 description              : &description "Ethan's academic portfolio · UCAS"
@@ -16,9 +16,9 @@ repository               : "horizon0320/horizon0320.github.io"  # 改成你仓�
 author:
   # Biographic information
   avatar           : "profile.png"             # 放到 /images 或根目录，路径按实际改
-  name             : "Ruize"
+  name             : "Ruize Hui"
   pronouns         :                           # 可留空
-  bio              : "Second year Master student in School of Artificial Intelligence, UCAS"
+  bio              : "2nd Master student at SAI,UCAS"
   location         : "Beijing, China"
   employer         : "UCAS"
   url              : "https://openreview.net/profile?id=~Ruize_Hui1"   # 你的 OpenReview
