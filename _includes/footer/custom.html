@@ -20,37 +20,61 @@
   {% endif %}
 {% endif %}
 
-{% if site.clustrmaps_script_src %}
+{% assign clustrmaps_map_url = fallback_clustrmaps_map_url | default: '' | strip %}
+{% assign clustrmaps_id = site.clustrmaps_id | default: '' | strip %}
+{% assign clustrmaps_script_url = site.clustrmaps_script_src | default: '' | strip %}
+{% assign clustrmaps_image_url = site.clustrmaps_image_src | default: '' | strip %}
+{% assign clustrmaps_image_link_url = clustrmaps_map_url %}
+
+{% if clustrmaps_script_url contains '<script' and clustrmaps_script_url contains 'src=' %}
+  {% assign clustrmaps_script_src_attr = clustrmaps_script_url | split: 'src=' | last | strip %}
+  {% assign clustrmaps_script_src_quote = clustrmaps_script_src_attr | slice: 0, 1 %}
+  {% assign clustrmaps_script_url = clustrmaps_script_src_attr | remove_first: clustrmaps_script_src_quote | split: clustrmaps_script_src_quote | first | strip %}
+{% endif %}
+
+{% if clustrmaps_image_url contains '<img' and clustrmaps_image_url contains 'src=' %}
+  {% assign clustrmaps_image_src_attr = clustrmaps_image_url | split: 'src=' | last | strip %}
+  {% assign clustrmaps_image_src_quote = clustrmaps_image_src_attr | slice: 0, 1 %}
+  {% assign clustrmaps_image_url = clustrmaps_image_src_attr | remove_first: clustrmaps_image_src_quote | split: clustrmaps_image_src_quote | first | strip %}
+{% endif %}
+
+{% if site.clustrmaps_image_src and site.clustrmaps_image_src contains '<a' and site.clustrmaps_image_src contains 'href=' %}
+  {% assign clustrmaps_image_href_attr = site.clustrmaps_image_src | split: 'href=' | last | strip %}
+  {% assign clustrmaps_image_href_quote = clustrmaps_image_href_attr | slice: 0, 1 %}
+  {% assign clustrmaps_image_link_url = clustrmaps_image_href_attr | remove_first: clustrmaps_image_href_quote | split: clustrmaps_image_href_quote | first | strip %}
+{% endif %}
+
+{% if clustrmaps_script_url != nil and clustrmaps_script_url != '' %}
 <div style="text-align:center; margin-top:1em;">
-  <script type='text/javascript' id='clustrmaps' src='{{ site.clustrmaps_script_src | escape }}'></script>
-  {% if fallback_clustrmaps_map_url %}
+  <script type='text/javascript' id='clustrmaps' src='{{ clustrmaps_script_url | escape }}'></script>
+  {% if clustrmaps_map_url != nil and clustrmaps_map_url != '' %}
   <noscript>
-    <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
+    <a href="{{ clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
   </noscript>
   {% endif %}
 </div>
-{% elsif site.clustrmaps_id %}
+{% elsif clustrmaps_id != nil and clustrmaps_id != '' %}
 <div style="text-align:center; margin-top:1em;">
-  <script type='text/javascript' id='clustrmaps' src='https://cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d={{ site.clustrmaps_id }}&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
-  {% if fallback_clustrmaps_map_url %}
+  <script type='text/javascript' id='clustrmaps' src='https://cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d={{ clustrmaps_id }}&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
+  {% if clustrmaps_map_url != nil and clustrmaps_map_url != '' %}
   <noscript>
-    <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
+    <a href="{{ clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
   </noscript>
   {% endif %}
 </div>
-{% elsif site.clustrmaps_image_src %}
+{% elsif clustrmaps_image_url != nil and clustrmaps_image_url != '' %}
 <div style="text-align:center; margin-top:1em;">
-  {% if fallback_clustrmaps_map_url %}
-  <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">
-    <img src="{{ site.clustrmaps_image_src | escape }}" alt="ClustrMaps visitor map" loading="lazy">
+  {% if clustrmaps_image_link_url != nil and clustrmaps_image_link_url != '' %}
+  <a href="{{ clustrmaps_image_link_url | escape }}" target="_blank" rel="noopener noreferrer">
+    <img src="{{ clustrmaps_image_url | escape }}" alt="ClustrMaps visitor map" loading="lazy">
   </a>
   {% else %}
-  <img src="{{ site.clustrmaps_image_src | escape }}" alt="ClustrMaps visitor map" loading="lazy">
+  <img src="{{ clustrmaps_image_url | escape }}" alt="ClustrMaps visitor map" loading="lazy">
   {% endif %}
 </div>
-{% elsif fallback_clustrmaps_map_url %}
+{% elsif clustrmaps_map_url != nil and clustrmaps_map_url != '' %}
 <div style="text-align:center; margin-top:1em;">
-  <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
+  <a href="{{ clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
 </div>
 {% endif %}
 

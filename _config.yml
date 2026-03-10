@@ -148,8 +148,8 @@ analytics:
 
 # ClustrMaps visitor globe
 clustrmaps_id            :           # Optional: paste the `d=` site ID to use the built-in ClustrMaps script
-clustrmaps_script_src    :           # Optional: paste the ClustrMaps script src URL from the JavaScript embed snippet
-clustrmaps_image_src     :           # Optional: paste the ClustrMaps image src URL from the plain image embed snippet
+clustrmaps_script_src    :           # Optional: paste the ClustrMaps script src URL or the full JavaScript embed snippet from ClustrMaps
+clustrmaps_image_src     :           # Optional: paste the ClustrMaps image src URL or the full plain image embed snippet from ClustrMaps
 clustrmaps_map_url       :           # Optional: override the ClustrMaps map page URL used for the footer fallback link
 
 # Reading Files
