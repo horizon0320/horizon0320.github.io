@@ -3,9 +3,22 @@
 <a href="/sitemap/">Sitemap</a>
 
 <!-- ClustrMaps visitor globe -->
-{% if site.clustrmaps_id %}
+{% if site.clustrmaps_embed %}
+<div style="text-align:center; margin-top:1em;">
+  {{ site.clustrmaps_embed }}
+</div>
+{% elsif site.clustrmaps_id %}
 <div style="text-align:center; margin-top:1em;">
   <script type='text/javascript' id='clustrmaps' src='https://cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d={{ site.clustrmaps_id }}&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
+  {% if site.clustrmaps_map_url %}
+  <noscript>
+    <a href="{{ site.clustrmaps_map_url }}" rel="noopener noreferrer">View my ClustrMaps visitor map</a>
+  </noscript>
+  {% endif %}
+</div>
+{% elsif site.clustrmaps_map_url %}
+<div style="text-align:center; margin-top:1em;">
+  <a href="{{ site.clustrmaps_map_url }}" rel="noopener noreferrer" style="font-weight:600; text-decoration:underline;">View my ClustrMaps visitor map</a>
 </div>
 {% endif %}
 

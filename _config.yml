@@ -147,7 +147,9 @@ analytics:
     tracking_id          :
 
 # ClustrMaps visitor globe
-clustrmaps_id            :           # Your ClustrMaps site ID from clustrmaps.com
+clustrmaps_id            :           # Optional: paste the `d=` site ID to use the built-in ClustrMaps script
+clustrmaps_embed         :           # Optional: paste the full ClustrMaps embed code (<script>...</script> or <a><img></a>)
+clustrmaps_map_url       : "https://www.clustrmaps.com/map/Horizon0320.github.io"
 
 # Reading Files
 include:
