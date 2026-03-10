@@ -148,8 +148,9 @@ analytics:
 
 # ClustrMaps visitor globe
 clustrmaps_id            :           # Optional: paste the `d=` site ID to use the built-in ClustrMaps script
-clustrmaps_embed         :           # Optional: paste the full ClustrMaps embed code (<script>...</script> or <a><img></a>)
-clustrmaps_map_url       : "https://www.clustrmaps.com/map/Horizon0320.github.io"
+clustrmaps_script_src    :           # Optional: paste the ClustrMaps script src URL from the JavaScript embed snippet
+clustrmaps_image_src     :           # Optional: paste the ClustrMaps image src URL from the plain image embed snippet
+clustrmaps_map_url       :           # Optional: override the ClustrMaps map page URL used for the footer fallback link
 
 # Reading Files
 include:

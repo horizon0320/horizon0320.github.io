@@ -3,22 +3,54 @@
 <a href="/sitemap/">Sitemap</a>
 
 <!-- ClustrMaps visitor globe -->
-{% if site.clustrmaps_embed %}
+{% assign fallback_clustrmaps_map_url = site.clustrmaps_map_url %}
+{% if fallback_clustrmaps_map_url == nil or fallback_clustrmaps_map_url == '' %}
+  {% comment %}Extract the hostname from site.url, ignoring any scheme, path, or local dev port.{% endcomment %}
+  {% assign clustrmaps_site_source = site.url | default: '' %}
+  {% if clustrmaps_site_source contains '://' %}
+    {% assign clustrmaps_site_source = clustrmaps_site_source | split: '://' | last %}
+  {% endif %}
+  {% assign clustrmaps_site_host = clustrmaps_site_source | split: '/' | first | split: ':' | first %}
+  {% if clustrmaps_site_host == '' and site.repository %}
+    {% comment %}Fallback for standard GitHub Pages repositories like owner/owner.github.io.{% endcomment %}
+    {% assign clustrmaps_site_host = site.repository | split: '/' | first | append: '.github.io' %}
+  {% endif %}
+  {% if clustrmaps_site_host != '' %}
+    {% assign fallback_clustrmaps_map_url = 'https://www.clustrmaps.com/map/' | append: clustrmaps_site_host %}
+  {% endif %}
+{% endif %}
+
+{% if site.clustrmaps_script_src %}
 <div style="text-align:center; margin-top:1em;">
-  {{ site.clustrmaps_embed }}
+  <script type='text/javascript' id='clustrmaps' src='{{ site.clustrmaps_script_src | escape }}'></script>
+  {% if fallback_clustrmaps_map_url %}
+  <noscript>
+    <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
+  </noscript>
+  {% endif %}
 </div>
 {% elsif site.clustrmaps_id %}
 <div style="text-align:center; margin-top:1em;">
   <script type='text/javascript' id='clustrmaps' src='https://cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d={{ site.clustrmaps_id }}&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
-  {% if site.clustrmaps_map_url %}
+  {% if fallback_clustrmaps_map_url %}
   <noscript>
-    <a href="{{ site.clustrmaps_map_url }}" rel="noopener noreferrer">View my ClustrMaps visitor map</a>
+    <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
   </noscript>
   {% endif %}
 </div>
-{% elsif site.clustrmaps_map_url %}
+{% elsif site.clustrmaps_image_src %}
 <div style="text-align:center; margin-top:1em;">
-  <a href="{{ site.clustrmaps_map_url }}" rel="noopener noreferrer" style="font-weight:600; text-decoration:underline;">View my ClustrMaps visitor map</a>
+  {% if fallback_clustrmaps_map_url %}
+  <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">
+    <img src="{{ site.clustrmaps_image_src | escape }}" alt="ClustrMaps visitor map" loading="lazy">
+  </a>
+  {% else %}
+  <img src="{{ site.clustrmaps_image_src | escape }}" alt="ClustrMaps visitor map" loading="lazy">
+  {% endif %}
+</div>
+{% elsif fallback_clustrmaps_map_url %}
+<div style="text-align:center; margin-top:1em;">
+  <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
 </div>
 {% endif %}
 
