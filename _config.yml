@@ -146,6 +146,9 @@ analytics:
   google:
     tracking_id          :
 
+# ClustrMaps visitor globe
+clustrmaps_id            :           # Your ClustrMaps site ID from clustrmaps.com
+
 # Reading Files
 include:
   - .htaccess
