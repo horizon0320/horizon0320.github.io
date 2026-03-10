@@ -20,35 +20,46 @@
   {% endif %}
 {% endif %}
 
-{% if site.clustrmaps_script_src %}
+{% assign fallback_clustrmaps_map_url = fallback_clustrmaps_map_url | default: '' | strip %}
+{% assign clustrmaps_id = site.clustrmaps_id | default: '' | strip %}
+{% assign clustrmaps_script_embed = site.clustrmaps_script_src | default: '' | strip %}
+{% assign clustrmaps_image_embed = site.clustrmaps_image_src | default: '' | strip %}
+
+{% if clustrmaps_script_embed != blank %}
 <div style="text-align:center; margin-top:1em;">
-  <script type='text/javascript' id='clustrmaps' src='{{ site.clustrmaps_script_src | escape }}'></script>
-  {% if fallback_clustrmaps_map_url %}
+  {% if clustrmaps_script_embed contains '<script' %}
+  {{ clustrmaps_script_embed }}
+  {% else %}
+  <script type='text/javascript' id='clustrmaps' src='{{ clustrmaps_script_embed | escape }}'></script>
+  {% endif %}
+  {% if fallback_clustrmaps_map_url != blank %}
   <noscript>
     <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
   </noscript>
   {% endif %}
 </div>
-{% elsif site.clustrmaps_id %}
+{% elsif clustrmaps_id != blank %}
 <div style="text-align:center; margin-top:1em;">
-  <script type='text/javascript' id='clustrmaps' src='https://cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d={{ site.clustrmaps_id }}&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
-  {% if fallback_clustrmaps_map_url %}
+  <script type='text/javascript' id='clustrmaps' src='https://cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d={{ clustrmaps_id }}&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
+  {% if fallback_clustrmaps_map_url != blank %}
   <noscript>
     <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
   </noscript>
   {% endif %}
 </div>
-{% elsif site.clustrmaps_image_src %}
+{% elsif clustrmaps_image_embed != blank %}
 <div style="text-align:center; margin-top:1em;">
-  {% if fallback_clustrmaps_map_url %}
+  {% if clustrmaps_image_embed contains '<img' or clustrmaps_image_embed contains '<a ' %}
+  {{ clustrmaps_image_embed }}
+  {% elsif fallback_clustrmaps_map_url != blank %}
   <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">
-    <img src="{{ site.clustrmaps_image_src | escape }}" alt="ClustrMaps visitor map" loading="lazy">
+    <img src="{{ clustrmaps_image_embed | escape }}" alt="ClustrMaps visitor map" loading="lazy">
   </a>
   {% else %}
-  <img src="{{ site.clustrmaps_image_src | escape }}" alt="ClustrMaps visitor map" loading="lazy">
+  <img src="{{ clustrmaps_image_embed | escape }}" alt="ClustrMaps visitor map" loading="lazy">
   {% endif %}
 </div>
-{% elsif fallback_clustrmaps_map_url %}
+{% elsif fallback_clustrmaps_map_url != blank %}
 <div style="text-align:center; margin-top:1em;">
   <a href="{{ fallback_clustrmaps_map_url }}" target="_blank" rel="noopener noreferrer">View the visitor map</a>
 </div>
