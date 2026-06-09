@@ -3,9 +3,7 @@ layout: single
 author_profile: true
 ---
 
-Welcome! I am Ethan (Ruize Hui), currently pursuing my Master's degree at School of Artificial Intelligence, University of Chinese Academy of Sciences (UCAS).
-
-I am fortunate to be advised by [Kang Liu](https://scholar.google.com/citations?user=DtZCfl0AAAAJ&hl=en) and [Yushi Yang](https://scholar.google.com/citations?hl=en&user=50HqUWQAAAAJ&view_op=list_works&sortby=pubdate).
+Welcome! I am Ethan (Ruize Hui), currently pursuing my Master's degree at School of Artificial Intelligence, University of Chinese Academy of Sciences (UCAS), where I am fortunate to be advised by [Yushi Yang](https://scholar.google.com/citations?hl=en&user=50HqUWQAAAAJ&view_op=list_works&sortby=pubdate) and [Kang Liu](https://scholar.google.com/citations?user=DtZCfl0AAAAJ&hl=en) .
 
 > I aim to turn real-world challenges into clear scientific questions and develop solutions that feed back into practice, with publications as a way to share the insights. Ultimately, I believe the goal of research is to solve problems and serve people.  
 
