@@ -203,22 +203,22 @@ body.profile-style {
     font-weight: 500;
   }
 
-  .page__content > p:has(a[href*="/publication/"]) {
+  .page__content > p:has(a[href*="/publication/"], a[href*="/doi/"]) {
     margin: 0 0 0.45rem;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.2rem;
     line-height: 1.45;
   }
 
-  .page__content > p:has(a[href*="/publication/"]) a {
+  .page__content > p:has(a[href*="/publication/"], a[href*="/doi/"]) a {
     text-decoration-color: transparent;
   }
 
-  .page__content > p:has(a[href*="/publication/"]) a:hover {
+  .page__content > p:has(a[href*="/publication/"], a[href*="/doi/"]) a:hover {
     text-decoration-color: currentColor;
   }
 
-  .page__content > p:has(a[href*="/publication/"]) + p {
+  .page__content > p:has(a[href*="/publication/"], a[href*="/doi/"]) + p {
     color: var(--global-text-color-light);
     font-size: 0.94rem;
   }
@@ -358,7 +358,7 @@ body.profile-style {
       font-size: 1.5rem;
     }
 
-    .page__content > p:has(a[href*="/publication/"]) {
+    .page__content > p:has(a[href*="/publication/"], a[href*="/doi/"]) {
       font-size: 1.08rem;
     }
 
