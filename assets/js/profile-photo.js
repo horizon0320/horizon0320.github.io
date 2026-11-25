@@ -1,18 +1,17 @@
 (() => {
-  const link = document.querySelector('.author__photo-link');
-  const dialog = document.getElementById('profile-photo-dialog');
-  if (!link || !dialog || typeof dialog.showModal !== 'function') return;
+  const button = document.querySelector('.author__photo-toggle');
+  if (!button) return;
+  const image = button.querySelector('img');
+  const caption = document.getElementById('profile-photo-caption');
+  const originalSource = image.getAttribute('src');
+  const originalAlt = image.alt;
 
-  link.addEventListener('click', (event) => {
-    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    dialog.showModal();
-  });
-
-  dialog.addEventListener('click', (event) => {
-    if (event.target !== dialog) return;
-    const rect = dialog.getBoundingClientRect();
-    if (event.clientX < rect.left || event.clientX > rect.right ||
-        event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+  button.addEventListener('click', () => {
+    const showDetail = button.getAttribute('aria-pressed') !== 'true';
+    image.src = showDetail ? button.dataset.photoDetail : originalSource;
+    image.alt = showDetail ? 'Ruize Hui before preparing for his CCS presentation' : originalAlt;
+    button.setAttribute('aria-pressed', String(showDetail));
+    button.setAttribute('aria-label', showDetail ? 'Show profile photo' : 'Show photo before the CCS presentation');
+    caption.hidden = !showDetail;
   });
 })();

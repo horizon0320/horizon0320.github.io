@@ -8,7 +8,7 @@
 
   <div class="author__avatar">
     {% if page.profile_style and author.photo_detail %}
-    <a class="author__photo-link" href="{{ author.photo_detail | prepend: '/images/' | prepend: base_path }}" aria-label="View photo before the CCS presentation" aria-haspopup="dialog" aria-controls="profile-photo-dialog">
+    <button type="button" class="author__photo-toggle" data-photo-detail="{{ author.photo_detail | prepend: '/images/' | prepend: base_path }}" aria-label="Show photo before the CCS presentation" aria-pressed="false" aria-controls="profile-photo-caption">
     {% endif %}
     {% if author.avatar contains "://" %}
     	<img src="{{ author.avatar }}" alt="{{ author.name }}"  fetchpriority="high" />
@@ -16,7 +16,8 @@
     	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}"  fetchpriority="high" />
     {% endif %}
     {% if page.profile_style and author.photo_detail %}
-    </a>
+    </button>
+    <p id="profile-photo-caption" class="author__photo-caption" hidden>{{ author.photo_caption | escape }}</p>
     {% endif %}
   </div>
 

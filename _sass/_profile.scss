@@ -94,18 +94,22 @@ body.profile-style {
     border: 0;
   }
 
-  .author__photo-link {
+  .author__photo-toggle {
     display: inline-block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
     border-radius: 50%;
-    cursor: zoom-in;
+    cursor: pointer;
     transition: transform 180ms ease;
   }
 
-  .author__photo-link:hover {
+  .author__photo-toggle:hover {
     transform: scale(1.025);
   }
 
-  .author__photo-link:focus-visible {
+  .author__photo-toggle:focus-visible {
     outline: 2px solid var(--global-link-color);
     outline-offset: 5px;
   }
@@ -259,79 +263,22 @@ body.profile-style {
   }
 }
 
-html:has(.profile-photo-dialog[open]) {
-  overflow: hidden;
-}
-
-body.profile-style .profile-photo-dialog {
-  width: max-content;
-  max-width: calc(100vw - 2rem);
-  max-height: calc(100dvh - 2rem);
-  padding: 2.75rem 1rem 1rem;
-  border: 0;
-  border-radius: 6px;
-  background: var(--global-bg-color);
-  color: var(--global-text-color);
-  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.25);
-
-  &::backdrop {
-    background: rgba(15, 19, 22, 0.75);
+body.profile-style {
+  .sidebar .author__photo-toggle[aria-pressed="true"] img {
+    border-radius: 4px;
   }
 
-  figure {
-    display: block;
-    margin: 0;
-  }
-
-  img {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: calc(100dvh - 11rem);
-    margin: 0 auto;
-    border-radius: 2px;
-    object-fit: contain;
-  }
-
-  figcaption {
-    max-width: 100%;
+  .author__photo-caption {
+    max-width: 148px;
     margin: 0.65rem 0 0;
     color: var(--global-text-color-light);
     font-size: 0.7rem;
     line-height: 1.5;
-    text-align: center;
-  }
-
-  .profile-photo-dialog__close {
-    position: absolute;
-    top: 0.3rem;
-    right: 0.3rem;
-    margin: 0;
-
-    button {
-      display: grid;
-      place-items: center;
-      width: 44px;
-      height: 44px;
-      padding: 0;
-      border: 0;
-      border-radius: 3px;
-      background: transparent;
-      color: var(--global-text-color);
-      font-size: 1.6rem;
-      line-height: 1;
-      cursor: pointer;
-
-      &:focus-visible {
-        outline: 2px solid var(--global-link-color);
-      }
-    }
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.profile-style .author__photo-link {
+  body.profile-style .author__photo-toggle {
     transition: none;
   }
 }
