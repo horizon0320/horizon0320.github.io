@@ -1,0 +1,9 @@
+<dialog id="profile-photo-dialog" class="profile-photo-dialog" aria-label="Before the CCS presentation" aria-describedby="profile-photo-caption">
+  <form method="dialog" class="profile-photo-dialog__close">
+    <button type="submit" aria-label="Close photo" autofocus>&times;</button>
+  </form>
+  <figure>
+    <img src="{{ site.author.photo_detail | prepend: '/images/' | prepend: base_path }}" alt="Ruize Hui before preparing the CCS presentation" width="1280" height="1706" loading="lazy">
+    <figcaption id="profile-photo-caption">{{ site.author.photo_caption | escape }}</figcaption>
+  </figure>
+</dialog>

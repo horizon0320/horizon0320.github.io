@@ -15,10 +15,12 @@ repository               : "horizon0320/horizon0320.github.io"  # 改成你仓�
 # Site Author (sidebar profile)
 author:
   # Biographic information
-  avatar           : "profile_mask.jpg"             # 放到 /images 或根目录，路径按实际改
+  avatar           : "profile-friendly.jpg"
+  photo_detail     : "ccs-preparation.jpg"
+  photo_caption    : "*这是我在准备ccs presentation之前的照片"
   name             : "Ruize Hui"
   pronouns         :                           # 可留空
-  bio              : "2nd Master student at SAI, UCAS"
+  bio              : "3rd-year Master's student at SAI, UCAS"
   location         : "Beijing, China"
   employer         : "UCAS"
   url              : "https://openreview.net/profile?id=~Ruize_Hui1"   # 你的 OpenReview

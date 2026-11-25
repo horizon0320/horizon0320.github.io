@@ -7,10 +7,16 @@
 <div itemscope itemtype="http://schema.org/Person">
 
   <div class="author__avatar">
+    {% if page.profile_style and author.photo_detail %}
+    <a class="author__photo-link" href="{{ author.photo_detail | prepend: '/images/' | prepend: base_path }}" aria-label="View photo before the CCS presentation" aria-haspopup="dialog" aria-controls="profile-photo-dialog">
+    {% endif %}
     {% if author.avatar contains "://" %}
     	<img src="{{ author.avatar }}" alt="{{ author.name }}"  fetchpriority="high" />
     {% else %}
     	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}"  fetchpriority="high" />
+    {% endif %}
+    {% if page.profile_style and author.photo_detail %}
+    </a>
     {% endif %}
   </div>
 
