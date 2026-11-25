@@ -1,6 +1,7 @@
 ---
 layout: single
 author_profile: true
+profile_style: true
 ---
 
 Welcome! I am Ethan (Ruize Hui), currently pursuing my Master's degree at School of Artificial Intelligence, University of Chinese Academy of Sciences (UCAS), where I am fortunate to be advised by [Yushi Yang](https://scholar.google.com/citations?hl=en&user=50HqUWQAAAAJ&view_op=list_works&sortby=pubdate) and [Kang Liu](https://scholar.google.com/citations?user=DtZCfl0AAAAJ&hl=en) .
@@ -15,5 +16,15 @@ My research focuses on developing **efficient and controllable AI systems**, wit
 
 I am always open to engaging discussions, collaborative research opportunities, and innovative projects. Feel free to reach out if you share similar research interests or have potential collaboration ideas.
 
+## Selected Publication
 
-_Last Update: Mar. 07 2026_
+**Yanyuan Chen\*, Ruize Hui\*, Chen Hou, and Meikang Qiu.**
+
+[*Code-SeC: A Decoding-time Probing Method for Characterizing Secret Memorization in Code LLM*](/publication/2026-11-25-code-sec/). **Accepted at ACM CCS 2026.** Co-first authors.
+
+We propose a decoding-time probing and intervention framework that analyzes candidate-token distributions to identify secret memorization in code language models. A Trace-Uncertainty Score and contrastive decoding expose latent leakage risks that output-only audits may miss.
+
+\* Equal contribution.
+
+
+_Last Update: Nov. 25 2026_

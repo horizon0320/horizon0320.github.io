@@ -1,0 +1,393 @@
+/* Editorial academic profile, inspired by Dou-Yiming's personal site. */
+html:has(body.profile-style) {
+  font-size: 18px;
+}
+
+body.profile-style {
+  --global-bg-color: #faf9f5;
+  --global-footer-bg-color: #faf9f5;
+  --global-border-color: #e3dfd3;
+  --global-dark-border-color: #d4cfc2;
+  --global-link-color: #2f6690;
+  --global-link-color-hover: #234c6c;
+  --global-link-color-visited: #2f6690;
+  --global-masthead-link-color: #5e5d59;
+  --global-masthead-link-color-hover: #2f6690;
+  --global-text-color: #1f1e1b;
+  --global-text-color-light: #5e5d59;
+
+  background-color: var(--global-bg-color);
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+html[data-theme="dark"] body.profile-style {
+  --global-bg-color: #1a1917;
+  --global-footer-bg-color: #1a1917;
+  --global-border-color: #34312c;
+  --global-dark-border-color: #48443c;
+  --global-link-color: #8bc4d3;
+  --global-link-color-hover: #b0dce5;
+  --global-link-color-visited: #8bc4d3;
+  --global-masthead-link-color: #e4ecec;
+  --global-masthead-link-color-hover: #b0dce5;
+  --global-text-color: #e4ecec;
+  --global-text-color-light: #a8b8ba;
+}
+
+body.profile-style {
+  .masthead {
+    border-bottom: 1px solid var(--global-border-color);
+    background: var(--global-bg-color);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .masthead__inner-wrap {
+    max-width: 1090px;
+    padding: 0.65em 2rem;
+  }
+
+  .masthead__menu-item--lg {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .greedy-nav a {
+    font-size: 0.88rem;
+  }
+
+  #main {
+    display: grid;
+    grid-template-columns: minmax(0, 700px) 230px;
+    gap: 4.5rem;
+    max-width: 1090px;
+    margin: 3.25rem auto 5rem;
+    padding: 0 2rem;
+    animation: none;
+  }
+
+  #main::before,
+  #main::after {
+    display: none;
+  }
+
+  .sidebar {
+    position: static;
+    float: none;
+    grid-column: 2;
+    grid-row: 1;
+    width: auto;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .sidebar .author__avatar img {
+    max-width: 148px;
+    padding: 0;
+    border: 0;
+  }
+
+  .author__avatar,
+  .author__content,
+  .author__urls-wrapper {
+    display: block;
+    width: auto;
+    padding: 0;
+  }
+
+  .author__urls-wrapper button {
+    display: none;
+  }
+
+  .sidebar .author__name {
+    margin: 1.1rem 0 0.45rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+    font-weight: 500;
+  }
+
+  .sidebar .author__bio {
+    margin: 0 0 1rem;
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .author__urls-wrapper {
+    cursor: default;
+  }
+
+  .author__urls {
+    display: block;
+    position: static;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .author__urls::before,
+  .author__urls::after {
+    display: none;
+  }
+
+  .author__urls a {
+    margin: 0;
+    padding: 0.25rem 0;
+    color: var(--global-text-color-light);
+    font-size: 0.88rem;
+  }
+
+  .author__urls a:hover {
+    color: var(--global-link-color);
+    text-decoration: none;
+  }
+
+  .author__urls .fas,
+  .author__urls .fab,
+  .author__urls .ai {
+    color: var(--global-link-color);
+  }
+
+  .page,
+  .archive {
+    grid-column: 1;
+    grid-row: 1;
+    float: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page__related {
+    grid-column: 1 / -1;
+    width: auto;
+    padding: 0;
+  }
+
+  .page__content {
+    color: var(--global-text-color);
+  }
+
+  .page__content p,
+  .page__content li {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .page__content blockquote {
+    margin: 1.8rem 0;
+    padding: 0.1rem 0 0.1rem 1.2rem;
+    border-left: 2px solid #6a90b8;
+    color: var(--global-text-color-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    line-height: 1.65;
+  }
+
+  .page__content h2 {
+    margin: 2.7rem 0 1.1rem;
+    padding: 0 0 0.55rem;
+    border-bottom: 1px solid var(--global-border-color);
+    color: var(--global-text-color);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+  }
+
+  .page__content > p:has(a[href*="/publication/"]) {
+    margin: 0 0 0.45rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+    line-height: 1.45;
+  }
+
+  .page__content > p:has(a[href*="/publication/"]) a {
+    text-decoration-color: transparent;
+  }
+
+  .page__content > p:has(a[href*="/publication/"]) a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .page__content > p:has(a[href*="/publication/"]) + p {
+    color: var(--global-text-color-light);
+    font-size: 0.94rem;
+  }
+
+  .page__content a {
+    text-decoration-color: rgba(40, 107, 131, 0.35);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .page__content a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .page__footer {
+    border-top: 1px solid var(--global-border-color);
+  }
+
+  .page__footer footer {
+    max-width: 1090px;
+    padding: 0.8rem 2rem 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  body.profile-style {
+    #main {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2.75rem;
+      margin-top: 2rem;
+      padding: 0 1.5rem;
+    }
+
+    .page {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .sidebar {
+      grid-column: 1;
+      grid-row: 2;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--global-border-color);
+    }
+
+    .sidebar > [itemscope] {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr);
+      align-items: center;
+      column-gap: 1.1rem;
+    }
+
+    .sidebar .author__avatar {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      width: 88px;
+    }
+
+    .sidebar .author__avatar img {
+      max-width: 88px;
+    }
+
+    .sidebar .author__content {
+      grid-column: 2;
+      padding: 0;
+    }
+
+    .sidebar .author__name {
+      margin: 0 0 0.35rem;
+    }
+
+    .sidebar .author__bio {
+      margin: 0;
+    }
+
+    .author__urls-wrapper {
+      grid-column: 1 / -1;
+      margin-top: 0.8rem;
+    }
+
+    .author__urls-wrapper button {
+      display: none;
+    }
+
+    .author__urls {
+      display: flex;
+      position: static;
+      flex-wrap: wrap;
+      gap: 0.1rem 1.1rem;
+      margin: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .author__urls li {
+      white-space: normal;
+    }
+
+    .author__urls a {
+      padding: 0.25rem 0;
+    }
+
+    .page__footer footer {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  html:has(body.profile-style) {
+    font-size: 16px;
+  }
+
+  body.profile-style {
+    font-size: 16px;
+
+    .masthead__inner-wrap {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    #main {
+      margin-top: 1.4rem;
+      padding: 0 1rem;
+    }
+
+    .page__content blockquote {
+      margin: 1.35rem 0;
+      padding-left: 0.9rem;
+      font-size: 1.04rem;
+    }
+
+    .page__content h2 {
+      margin-top: 2.2rem;
+      font-size: 1.5rem;
+    }
+
+    .page__content > p:has(a[href*="/publication/"]) {
+      font-size: 1.08rem;
+    }
+
+    .page__footer footer {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.profile-style .page__content > p,
+  body.profile-style .page__content > blockquote,
+  body.profile-style .page__content > h2 {
+    animation: profile-rise 0.45s ease-out both;
+  }
+
+  body.profile-style .page__content > :nth-child(1) { animation-delay: 40ms; }
+  body.profile-style .page__content > :nth-child(2) { animation-delay: 90ms; }
+  body.profile-style .page__content > :nth-child(3) { animation-delay: 140ms; }
+
+  @keyframes profile-rise {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.profile-style .page__content > * {
+    animation: none;
+  }
+}
