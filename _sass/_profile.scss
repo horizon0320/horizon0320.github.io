@@ -223,24 +223,102 @@ body.profile-style {
     font-weight: 500;
   }
 
-  .page__content > p:has(a[href*="/publication/"], a[href*="/doi/"]) {
-    margin: 0 0 0.45rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.2rem;
-    line-height: 1.45;
+  .publication {
+    padding-top: 0.25rem;
   }
 
-  .page__content > p:has(a[href*="/publication/"], a[href*="/doi/"]) a {
-    text-decoration-color: transparent;
+  .publication .publication__venue {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    margin: 0 0 0.65rem;
+    color: var(--global-link-color);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
   }
 
-  .page__content > p:has(a[href*="/publication/"], a[href*="/doi/"]) a:hover {
-    text-decoration-color: currentColor;
-  }
-
-  .page__content > p:has(a[href*="/publication/"], a[href*="/doi/"]) + p {
+  .publication__status {
+    padding-left: 0.7rem;
+    border-left: 1px solid var(--global-dark-border-color);
     color: var(--global-text-color-light);
-    font-size: 0.94rem;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .publication .publication__title {
+    margin: 0 0 0.65rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  .publication .publication__title a {
+    color: var(--global-text-color);
+    text-decoration-color: transparent;
+    transition: color 160ms ease, text-decoration-color 160ms ease;
+
+    &:hover {
+      color: var(--global-link-color);
+    }
+  }
+
+  .publication .publication__authors {
+    margin: 0 0 0.15rem;
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
+  .publication sup {
+    position: static;
+    font-size: 0.7em;
+    vertical-align: super;
+    line-height: 0;
+  }
+
+  .publication .publication__note {
+    margin: 0 0 0.9rem;
+    color: var(--global-text-color-light);
+    font-size: 0.74rem;
+  }
+
+  .publication .publication__summary,
+  .publication__abstract p {
+    color: var(--global-text-color-light);
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .publication .publication__summary {
+    margin: 0 0 0.7rem;
+  }
+
+  .publication__abstract {
+    summary {
+      width: fit-content;
+      padding: 0.25rem 0;
+      color: var(--global-link-color);
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: color 160ms ease;
+
+      &:hover {
+        color: var(--global-link-color-hover);
+      }
+    }
+
+    p {
+      margin: 0.65rem 0 0;
+      padding-left: 1rem;
+      border-left: 1px solid var(--global-border-color);
+    }
+  }
+
+  .publication a:focus-visible,
+  .publication summary:focus-visible {
+    outline: 2px solid var(--global-link-color);
+    outline-offset: 4px;
   }
 
   .page__content a {
@@ -398,8 +476,8 @@ body.profile-style {
       font-size: 1.5rem;
     }
 
-    .page__content > p:has(a[href*="/publication/"], a[href*="/doi/"]) {
-      font-size: 1.08rem;
+    .publication .publication__title {
+      font-size: 1.06rem;
     }
 
     .page__footer footer {
@@ -412,7 +490,8 @@ body.profile-style {
 @media (prefers-reduced-motion: no-preference) {
   body.profile-style .page__content > p,
   body.profile-style .page__content > blockquote,
-  body.profile-style .page__content > h2 {
+  body.profile-style .page__content > h2,
+  body.profile-style .page__content > .publication {
     animation: profile-rise 0.45s ease-out both;
   }
 
@@ -429,5 +508,10 @@ body.profile-style {
 @media (prefers-reduced-motion: reduce) {
   body.profile-style .page__content > * {
     animation: none;
+  }
+
+  body.profile-style .publication a,
+  body.profile-style .publication summary {
+    transition: none;
   }
 }
