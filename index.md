@@ -18,7 +18,7 @@ My research focuses on building **safe and efficient LLMs and agents**, with par
 
 <article class="publication" aria-labelledby="code-sec-title">
   <p class="publication__venue">ACM CCS 2026 <span class="publication__status">Accepted</span></p>
-  <h3 id="code-sec-title" class="publication__title"><a href="https://dl.acm.org/doi/10.1145/3830454.3846643">Code-SeC: A Decoding-time Probing Method for Characterizing Secret Memorization in Code LLM</a></h3>
+  <h3 id="code-sec-title" class="publication__title"><a href="https://dl.acm.org/doi/10.1145/3830454.3846643">Code-SeC: A Decoding-time Probing Method for Characterizing Secret Memorization in Code LLM</a> <span class="publication__resources"><a href="{{ '/files/3830454.3846643.pdf' | relative_url }}" download aria-label="Download Code-SeC PDF">(pdf)</a> <a href="https://github.com/yanyuanOO/Code-SeC" aria-label="Code-SeC source code on GitHub">(code)</a></span></h3>
   <p class="publication__authors">Yanyuan Chen<sup>*</sup>, <strong>Ruize Hui<sup>*</sup></strong>, Chen Hou, and Meikang Qiu</p>
   <p class="publication__note"><sup>*</sup> Equal contribution</p>
   <p class="publication__abstract">Existing security audits for Code LLMs mainly inspect final outputs. A model may memorize a secret without revealing it in its output, so output-based audits can miss this form of memorization and underestimate the associated leakage risk. We propose Code-SeC, a decoding-time probing and intervention framework that analyzes candidate-token distributions and introduces a Trace-Uncertainty Score to detect memorization-related signals. We further use contrastive decoding to amplify these signals in the candidate-token space, enabling the detection of latent leakage risks before model release.</p>
