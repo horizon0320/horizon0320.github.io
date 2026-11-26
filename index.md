@@ -31,6 +31,6 @@ My research focuses on building **safe and efficient LLMs and agents**, with par
 
 ## Research Philosophy
 
-I aim to turn real-world challenges into clear scientific questions and develop solutions that feed back into practice, with publications as a way to share the insights. Ultimately, I believe the goal of research is to solve problems and serve people.
+> I aim to turn real-world challenges into clear scientific questions and develop solutions that feed back into practice, with publications as a way to share the insights. Ultimately, I believe the goal of research is to solve problems and serve people.
 
 _Last Update: Nov. 25 2026_
