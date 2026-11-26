@@ -11,8 +11,8 @@ Welcome! I am Ethan (Ruize Hui), currently a third-year Master's student at Scho
 I am actively **looking for Fall 2027 PhD positions**. If you are interested in my work or think I might be a good fit for your group, please don't hesitate to contact me!
 
 My research focuses on building **safe and efficient LLMs and agents**, with particular emphasis on:
-- **LLM Safety**: Improving the safety of LLMs and agents through post-training and harness design, and developing reliable evaluations of their safety and performance
-- **Efficient AI**: Optimizing model architectures and training paradigms to reduce computational costs while maintaining performance
+- **LLM Safety and Evaluation**: Improving the safety of LLMs and agents through post-training and harness design, and developing reliable evaluations of their safety and performance
+- **Efficient AI System**: Optimizing model architectures and training paradigms to reduce computational costs while maintaining performance
 
 ## Selected Publication
 
